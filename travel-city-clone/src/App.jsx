@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import HomePage from './components/Home';
+import {Home} from './components/HomePage/Home';
+import {Navbar} from './components/Navbar/Navbar';
+import {Footer} from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-       <h1>Travel City Clone</h1>
-       <HomePage/>
+      <Navbar/>
+       <Home/>
+       <Footer/>
     </div>
   );
 }
