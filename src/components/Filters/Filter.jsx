@@ -37,16 +37,25 @@ const Wraper1 = styled.div`
     `
 
 export const Filter = () => {
+const [carSearch,setCarSearch] = React.useState("");
 
+const handleChang = (e)=>{
+    setCarSearch(e.target.value)
+    console.log(carSearch)
+}
 
     return (
         <div className='filter-div'>
 
-
+           <h3>Filter by</h3>
             <Wraper>
                 <div>
                     <h4>Car Type</h4>
-                    <FormGroup className='fromgrp'>
+                    <FormGroup className='fromgrp' 
+                    name = "search"
+                    value ={carSearch}
+                    onChange={handleChang}
+                    >
                         <FormControlLabel control={<Checkbox />} label="Economy (12)" />
                         <FormControlLabel control={<Checkbox />} label="Compact (12)" />
                         <FormControlLabel control={<Checkbox />} label="Midsize (13)" />
@@ -70,10 +79,10 @@ Minivan (10)" />
                     <h4 className='h4-tag'>From</h4>
                     <div className='p-tag'>
 
-                        <p>$59</p>
-                        <p>$60</p>
+                        <p>$39</p>
+                        <p>$40</p>
                         <p>$62</p>
-                        <p>$61</p>
+                        <p>$42</p>
                         <p>$61</p>
                         <p>$115</p>
                         <p>$143</p>
