@@ -19,14 +19,15 @@ import MaterialUIPickers from './DatePicker';
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import RestoreIcon from '@material-ui/icons/Restore';
 import DateFnsUtils from "@date-io/date-fns";
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import { v4 as uuid } from "uuid";
 import SwapHorizSharpIcon from '@material-ui/icons/SwapHorizSharp';
+import { useNavigate } from 'react-router-dom';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
+    
     return (
         <div
             role="tabpanel"
@@ -84,12 +85,13 @@ export default function ScrollableTabsButtonForce() {
     const [trevelersPopupOpen, setTrevelersPopupOpen] = React.useState("none");
     const [startDate, setStartDate] = React.useState(new Date());
     const [endDate, setEndDate] = React.useState(new Date());
-    const history = useHistory();
+    // const history = useHistory();
     const [query, setQuery] = useState("");
     const [searchQueryResult, setSearchQueryResult] = useState([]);
     const [isSearching, setIsSearching] = useState(false);
     const [flightLeavingVal, setFlightLeavingVal] = useState("");
     const [flightLeavingSearchPopup, setFlightLeavingSearchPopup] = useState("none");
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -150,7 +152,8 @@ export default function ScrollableTabsButtonForce() {
     }
 
     const handleHotelSearch = () => {
-        history.push("/hotels");
+        // history.push("/hotels");
+        navigate("/hotels");
     }
 
     const handleAdulTrevelersCnt = (e, val) => {

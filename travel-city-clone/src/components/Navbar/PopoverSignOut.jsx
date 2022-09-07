@@ -11,14 +11,20 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 export default function PopoverSignOut() {
+  console.log("user logged in")
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const dispatch = useDispatch();
+  // const userName = useSelector((state) => state.userName);
+  // const login = useSelector((state) => state.login);
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  console.log(user)
+
+  // let NameofUser = "Name of user"
+  //  if(login)  user = userName;
+    // else NameofUser=user;
   
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-
-  const userName = useSelector((state) => state.userName);
-  const dispatch = useDispatch();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -29,19 +35,16 @@ export default function PopoverSignOut() {
   };
 
   
-
-
   // console.log(userName);
 
   const handleSignOut = () => {
     dispatch(logOut());
   }
 
-
   return (
     <div>
       <div className="userNameDiv" id="popoverid1" aria-describedby={id} variant="contained" onClick={handleClick}>
-      <h3 style={{ "color": "orange" }}>{user.name} </h3><i className="fa fa-angle-down" style={{ "font-size": "24px" }}></i>
+      <h3 style={{ "color": "orange" }}>{user.name}</h3><i className="fa fa-angle-down" style={{ "font-size": "24px" }}></i>
       </div>
       <Popover
         id={id}

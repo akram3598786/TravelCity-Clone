@@ -22,7 +22,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginSuccess } from "../../Store/Action";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react"
 
 const useStyles = makeStyles((theme) => ({
@@ -92,13 +93,15 @@ export const SignIn = () => {
     const classes = useStyles();
     const [input, setInput] = useState(initState);
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
+    const navigate = useNavigate();
     const userName = useSelector((state) => state.userName);
     const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
-    if (userName !== "") {
-        return <Redirect to="/" />
-    }
+
+    // if (userName !== "") {
+    //     return <Redirect to="/" />
+    // }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -109,16 +112,18 @@ export const SignIn = () => {
         e.preventDefault();
 
         const { data } = await axios.get(
-            `https://my-api-data.herokuapp.com/users/?email=${input.email}`
+            `http://localhost:8080/users/?email=${input.email}`
         );
+        console.log(data)
 
         if (data[0] === undefined || data[0].password !== input.password) {
             swal("Invalid Credentials!");
             dispatch(loginFailure());
-        } else {
+        } else {    
             dispatch(loginSuccess(data[0].firstName));
             swal("Logged in successfully");
-            history.push("/");
+            // history.push("/");
+            navigate("/");
         }
     };
 

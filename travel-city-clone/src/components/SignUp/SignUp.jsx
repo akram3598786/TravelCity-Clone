@@ -3,7 +3,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,7 +20,7 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import { useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Wrapper = styled.div`
@@ -89,7 +89,8 @@ const initState = {
 export const SignUp = () => {
     const classes = useStyles();
     const [state, setState] = useState(initState);
-    const history = useHistory();
+    // const history = useHistory();
+    const navigate = useNavigate();
     const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
     const handleChange = (e) => {
@@ -97,10 +98,38 @@ export const SignUp = () => {
         setState({ ...state, [name]: value });
     };
 
-    const handleSubmit = async (e) => {
+   
+   
+    const handleSubmit =  (e) => {
         e.preventDefault();
-        const { data } = await axios.get("https://myapidata.herokuapp.com/users");
-        console.log('data:', data)
+        console.log(state)
+
+
+        /*
+    axios
+            .post("https://reqres.in/api/users", payload)
+            .then((response) => {
+                console.log(response.status)
+                if (response.status == 201){
+                    dispatch(isAuth(true));
+                    alert("login Successfully !");
+                    navigate("/"); 
+                }else{
+                    alert("Went Wrong, Try again !")
+                }
+            })
+            .catch((err) => console.log(err));
+        */
+        axios
+        .post("http://localhost:8080/users",state)
+        .then((response)=>{
+            // console.log(response.status)
+            // history.push("/signIn");
+            navigate("/signIn")
+        })
+        .catch((err)=>console.log(err))
+
+        /*
         let isPresent = false;
 
         for (let i = 0; i < data.length; i++) {
@@ -121,6 +150,7 @@ export const SignUp = () => {
         } else {
             swal("Password does not match!");
         }
+        */
     };
 
     return (
@@ -134,17 +164,9 @@ export const SignUp = () => {
                     onClick={() => loginWithRedirect()}
                 >
                   {/*   <GoogleSign/> <FacebookIcon />  Sign in With Google Handles */}
-                  <GoogleIcon /> <FacebookIcon />  <LinkedInIcon/>  <GitHubIcon />
-                 
+                  <GoogleIcon /> <FacebookIcon />  <LinkedInIcon/>  <GitHubIcon />  
                 </Button>
-                {/* <Button
-                    className={classes.button}
-                    variant="contained"
-                    color="primary"
-                    startIcon={<FacebookIcon />}
-                >
-                    Sign up with Facebook
-                </Button> */}
+             
                 <div className="messege">
                     <span>
                         <VpnKeyIcon className={classes.icon} />

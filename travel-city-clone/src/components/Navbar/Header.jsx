@@ -21,7 +21,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
 
-  const userName = useSelector((state) => state.userName);
+  // const userName = useSelector((state) => state.userName);
+  // const login = useSelector((state) => state.login);
   const dispatch = useDispatch();
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
@@ -31,14 +32,9 @@ const Header = () => {
     dispatch(logOut());
   }
 
-
   const theme = useTheme();
-
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-
   const logo = "https://www.travelocity.com/_dms/header/logo.svg?locale=en_US&siteid=80001&2";
-
-
 
   return (
     <React.Fragment >
@@ -62,11 +58,10 @@ const Header = () => {
                   <div>Trips</div>
 
                   <div>
-                    {isAuthenticated
+                    { isAuthenticated
                       ? (
                         <div>
                           <PopoverSignOut/>
-                          {/* <h3 style={{ "color": "orange" }}>{user.name} </h3><i className="fa fa-angle-down" style={{ "font-size": "24px" }}></i> */}
                         </div>
                       )
 

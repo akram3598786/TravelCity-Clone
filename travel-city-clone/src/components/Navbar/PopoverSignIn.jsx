@@ -6,13 +6,13 @@ import "./drawer.scss";
 
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+// import { usenavigate } from "react-router-dom";
 import { logOut } from "../../Store/Action";
 
 
 export default function BasicPopover() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  // const navigate = useNavigate();
+  // const navigate = usenavigate();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -24,7 +24,7 @@ export default function BasicPopover() {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-  const userName = useSelector((state) => state.userName);
+   const userName = useSelector((state) => state.userName);
   const dispatch = useDispatch();
 
   const handleSignOut = () => {
