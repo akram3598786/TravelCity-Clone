@@ -7,14 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1>Login with google</h1>
-      {isAuthenticated ? (
-        <p>
-          {user.name}
-          {"         "}
-          {"         "}
-          {user.email}
-        </p>
-      ) : null}
+      {isAuthenticated ? <p>{user.name}</p> : null}
 
       {isAuthenticated ? (
         <button onClick={() => logout({ returnTo: window.location.origin })}>
