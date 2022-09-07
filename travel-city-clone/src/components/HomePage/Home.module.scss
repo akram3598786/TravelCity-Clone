@@ -1,19 +1,19 @@
+@import "../../globlal.scss";
 
- @import "../../globlal.scss"; 
 
-
-@media screen and (mix-width : 556px)  and (max-width : 1011px) {
-    .container{
+@media screen and (mix-width : 556px) and (max-width : 1011px) {
+    .container {
         padding: -20px;
         margin: 0px;
     }
+
     /* .info1{
         display: none;
     } */
-    .info2Right{
+    .info2Right {
         flex-direction: column;
     }
-  
+
 }
 
 .container {
@@ -52,7 +52,7 @@
         color: white;
     }
 
-    p{
+    p {
         font-size: 1.125rem;
         font-weight: 500;
         width: 60%;
@@ -60,14 +60,14 @@
     }
 
 
-    @include mobile{    
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       flex-direction: column;
+    @include mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
-    p{
+    p {
         width: 80%;
     }
 }
@@ -76,7 +76,7 @@
 
 
 
-.offerTop > button {
+.offerTop>button {
     border-color: #a1aab3;
     border-radius: 0.5rem;
     border-width: 1px;
@@ -99,9 +99,8 @@
 }
 
 .info1 {
-    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/08/04/TVLY_VaccineCampaign_imgB_1199x399_20210804.jpg"), linear-gradient(
-        270deg
-        , rgba(0,11,38,0) 5rem, rgba(0,11,38,0.4), rgba(0,1,38,0.5));;
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/08/04/TVLY_VaccineCampaign_imgB_1199x399_20210804.jpg"), linear-gradient(270deg, rgba(0, 11, 38, 0) 5rem, rgba(0, 11, 38, 0.4), rgba(0, 1, 38, 0.5));
+    ;
     width: 80vw;
     height: 20vw;
     margin: 30px auto;
@@ -111,9 +110,9 @@
     color: white;
 
 
-     @include mobile{
+    @include mobile {
         display: none;
-     }
+    }
 }
 
 .info1InnerDiv {
@@ -161,7 +160,7 @@
     margin: 10px auto;
 }
 
-.info1BottomPara > p {
+.info1BottomPara>p {
     color: #505c66;
     font-size: 0.875rem;
     font-weight: 400;
@@ -173,7 +172,7 @@
 }
 
 .info2Img {
-    background-image: url('https://tpc.googlesyndication.com/simgad/5754524239753144788?'); 
+    background-image: url('https://tpc.googlesyndication.com/simgad/5754524239753144788?');
     background-position: 50% 50%;
     height: 214px;
     width: 100%;
@@ -196,17 +195,17 @@
     color: #001959;
 }
 
-.info2OfferDes > h1 {
+.info2OfferDes>h1 {
     font-size: 1.125rem;
     font-weight: 500;
 }
 
-.info2OfferDes > p {
+.info2OfferDes>p {
     font-weight: 400;
     font-size: 0.875rem;
 }
 
-.info2RightDiv{
+.info2RightDiv {
     display: flex;
     flex-direction: column;
 }
@@ -227,30 +226,31 @@
         background-size: cover;
         border-radius: 9.5px 0px 0px 9.5px;
     }
-    
+
     .info2RightImg2 {
         background-image: url("https://tpc.googlesyndication.com/simgad/4885167890549748352?");
     }
-    
-    @include mobile{
+
+    @include mobile {
         flex-direction: column;
         margin-top: 20px;
 
-        .info2RightImg1,.info2RightImg2{
+        .info2RightImg1,
+        .info2RightImg2 {
             width: 100%;
-        } 
+        }
     }
 }
 
 
-.info2Right > div > h2 {
+.info2Right>div>h2 {
     color: #001959;
     font-size: 1.125rem;
     margin-left: 10px;
     font-weight: 500;
 }
 
-.info2Right > div > p {
+.info2Right>div>p {
     color: #465280;
     font-size: 0.875rem;
     font-weight: 400;
@@ -270,7 +270,10 @@
     padding-top: 20px;
 }
 
-.info3BgImg1, .info3BgImg2, .info3BgImg3, .info3BgImg4 {
+.info3BgImg1,
+.info3BgImg2,
+.info3BgImg3,
+.info3BgImg4 {
     height: 200px;
     width: 95%;
     background: gray;
@@ -278,7 +281,7 @@
     position: relative;
     margin: auto;
 
-    @include mobile{
+    @include mobile {
         margin-top: 15px;
     }
 }
@@ -304,7 +307,10 @@
 }
 
 
-.info3BgImg1 > h3 , .info3BgImg2 > h3 , .info3BgImg3 > h3 , .info3BgImg4 > h3 {
+.info3BgImg1>h3,
+.info3BgImg2>h3,
+.info3BgImg3>h3,
+.info3BgImg4>h3 {
     margin: 0;
     text-shadow: 0px 1px 2px rgb(17 21 26 / 80%);
     color: white;
@@ -320,7 +326,7 @@
     width: 80vw;
 }
 
-.infoVideo > iframe {
+.infoVideo>iframe {
     width: 100%;
     height: 450px;
     border-radius: 10px;
@@ -345,13 +351,13 @@
     color: #fff;
 }
 
-.infoFeaturedOfferDetails > h3 {
+.infoFeaturedOfferDetails>h3 {
     margin: 5px 0px;
     font-size: 0.875rem;
     line-height: calc(18 / 14);
     font-weight: 700;
 }
 
-.infoFeaturedOfferDetails > p {
+.infoFeaturedOfferDetails>p {
     margin: 5px 0px;
 }

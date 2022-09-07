@@ -11,6 +11,9 @@ import Container from "@material-ui/core/Container";
 import styled from "styled-components";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import AppleIcon from "@material-ui/icons/Apple";
+import GoogleIcon from '@mui/icons-material/Google';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import VerifiedUserRoundedIcon from "@material-ui/icons/VerifiedUserRounded";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
@@ -18,6 +21,7 @@ import { useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Wrapper = styled.div`
   width: 80%;
@@ -61,9 +65,12 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "70px",
     },
 
-    button: {
+    SocialBtn: {
         width: "50%",
+        padding : "10px",
         marginBottom: "20px",
+        display: "flex",
+        justifyContent : "space-around",
     },
 
     icon: {
@@ -83,6 +90,7 @@ export const SignUp = () => {
     const classes = useStyles();
     const [state, setState] = useState(initState);
     const history = useHistory();
+    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -118,22 +126,25 @@ export const SignUp = () => {
     return (
         <Wrapper>
             <Container className={classes.option}>
+                <h3>Sign in With : </h3>
                 <Button
-                    className={classes.button}
+                    className={classes.SocialBtn}
                     variant="outlined"
                     color="default"
-                    startIcon={<AppleIcon />}
+                    onClick={() => loginWithRedirect()}
                 >
-                    Sign up with apple
+                  {/*   <GoogleSign/> <FacebookIcon />  Sign in With Google Handles */}
+                  <GoogleIcon /> <FacebookIcon />  <LinkedInIcon/>  <GitHubIcon />
+                 
                 </Button>
-                <Button
+                {/* <Button
                     className={classes.button}
                     variant="contained"
                     color="primary"
                     startIcon={<FacebookIcon />}
                 >
                     Sign up with Facebook
-                </Button>
+                </Button> */}
                 <div className="messege">
                     <span>
                         <VpnKeyIcon className={classes.icon} />
@@ -250,6 +261,7 @@ export const SignUp = () => {
                     </form>
                 </div>
             </Container>
+       
         </Wrapper>
     );
 };

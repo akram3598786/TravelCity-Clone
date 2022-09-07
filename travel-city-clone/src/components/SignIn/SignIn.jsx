@@ -17,9 +17,13 @@ import Typography from "@material-ui/core/Typography";
 import { useState } from "react";
 import axios from "axios";
 import swal from "sweetalert";
+import GoogleIcon from '@mui/icons-material/Google';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginSuccess } from "../../Store/Action";
 import { useHistory } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react"
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -46,9 +50,12 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "70px",
     },
 
-    button: {
+    SocialBtn: {
         width: "50%",
+        padding : "10px",
         marginBottom: "20px",
+        display: "flex",
+        justifyContent : "space-around",
     },
 
     btnColor: {},
@@ -87,6 +94,7 @@ export const SignIn = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const userName = useSelector((state) => state.userName);
+    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
     if (userName !== "") {
         return <Redirect to="/" />
@@ -117,21 +125,15 @@ export const SignIn = () => {
     return (
         <Wrapper>
             <Container className={classes.option}>
+            <h3>Sign in With : </h3>
                 <Button
-                    className={classes.button}
+                    className={classes.SocialBtn}
                     variant="outlined"
                     color="default"
-                    startIcon={<AppleIcon />}
+                    onClick={() => loginWithRedirect()}
                 >
-                    Sign in with apple
-                </Button>
-                <Button
-                    className={classes.button}
-                    variant="contained"
-                    color="primary"
-                    startIcon={<FacebookIcon />}
-                >
-                    Sign in with Facebook
+                  {/*   <GoogleSign/> <FacebookIcon />  Sign in With Google Handles */}
+                  <GoogleIcon /> <FacebookIcon />  <LinkedInIcon/>  <GitHubIcon />  
                 </Button>
                 <div className="messege">
                     <span>

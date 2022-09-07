@@ -1,5 +1,5 @@
 import "./App.css";
-import { useAuth0 } from "@auth0/auth0-react";
+  import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();

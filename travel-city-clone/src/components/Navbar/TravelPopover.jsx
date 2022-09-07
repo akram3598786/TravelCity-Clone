@@ -46,6 +46,7 @@ export default function BasicPopover() {
                   <ShopTwoIcon/>
                     <div>Packages</div>
           </div>
+          
            <div  className='iconstyle'>
                   <LocationCityIcon/>
                     <div>Stays</div>
