@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import {Link} from 'react-router-dom';
 import {
     CircularProgress,
     InputLabel,
@@ -11,6 +12,7 @@ import { Filter } from '../Filters/CarFilter';
 
 const Wraper = styled.div`
 gap : 20px;
+//  width : 110%;
 .progress {
     width: 20%;
     margin: 200px auto;
@@ -22,12 +24,19 @@ gap : 20px;
     margin-bottom: 10px;
     width: 100px;
   }
-  
+  @media (max-width: 600px) {
+    .btn{
+        align-item : center;
+       }
+       .ad-img{
+        display : none;
+        }
+  }
+ 
 `
 const CarDiv = styled.div`
  display : flex;
-//  width : 761px;
- height : 242px;
+width : 761px;
  justify-content : space-between;
  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
  border-radius : 8px;
@@ -36,8 +45,8 @@ background-color : white;
 
 
 @media (max-width: 600px) {
-    width:70%;
-    height : 220px;
+     width:100vw;
+  
     .greatdeal{
         line-height: 1.6;
         color : #333333;
@@ -90,7 +99,11 @@ margin-right : 5px
 const SortDiv = styled.div`
 display : flex;
 justify-content : space-between;
-
+@media (max-width: 600px) {
+    flex-direction: column;
+    justify-content : center;
+    width :80%;
+}
 
 .totalCars{
     line-height: 0.4;
@@ -119,7 +132,7 @@ font-size : 12px
  color : #0D5ab9;
  cursor: pointer;
 margin : auto
- 
+
  `
 export const MidCar = () => {
     const [loding, setLoding] = React.useState(false)
@@ -235,19 +248,20 @@ const handleClickCar = ()=>{
                                 <h3 style={{ color: "#505c66" }}>${data.price}</h3>
                                 <p>per day </p>
 
-                                <Button onClick={() => handleReserve(data.id)} >Reserve</Button>
+                               <Link to="/carReserve"><Button onClick={() => handleReserve(data.id)} >Reserve</Button></Link> 
                             </div>
                             
                         </CarDiv>
                     })
 
                 }
-                <div style={{marginLeft : "330px",marginBottom:"30px",marginTop:"20px"}}>
+                <div style={{marginLeft : "330px",marginBottom:"30px",marginTop:"20px"}} className="btn">
                 <Button1  onClick={handleClickCar} style={{justifyContent : "center"}}>Show More</Button1>
                 </div>
                 {/*  */}
+                <img src="https://tpc.googlesyndication.com/simgad/6177323794858097722?" alt="" style={{marginLeft : "20px"}} className="ad-img"/>
             </Wraper>
-            <img src="https://tpc.googlesyndication.com/simgad/6177323794858097722?" alt="" style={{marginLeft : "20px"}}/>
+            
         </div>
     )
 }

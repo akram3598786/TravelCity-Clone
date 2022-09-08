@@ -1,14 +1,19 @@
 import React from 'react';
-import './App.css';
-import { Carbook } from './components/Carbook/Carbook';
-
-
+// import { Carbook } from './components/Carbook/Carbook';
+// import { Routes, Route } from "react-router-dom";
+// import {Reservesection} from "./Pages/Reservesection"
+import { Router } from './Routes/Router';
 
 function App() {
   return (
     <div className="App">
-     <Carbook/>
-   
+      <Router/>
+   {/* <Carbook/>
+       <Routes>
+          <Route path='/carlist' element={<Carbook/>}></Route>
+          <Route path='/carReserve' element={<Reservesection/>}></Route>
+          </Routes>   */}
+
     </div>
   );
 }
