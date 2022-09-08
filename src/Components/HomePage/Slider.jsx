@@ -150,9 +150,7 @@ export default function ScrollableTabsButtonForce() {
         setFlightLeavingSearchPopup("none");
         setFlightLeavingVal(data);
     }
-
     const handleHotelSearch = () => {
-        // history.push("/hotels");
         navigate("/hotels");
     }
 
@@ -537,6 +535,7 @@ export default function ScrollableTabsButtonForce() {
                                             </div>
                                         </div>
                                     })
+                                    
                                 }
                             </div>
                         </div>
