@@ -8,6 +8,10 @@ import { PaymentPage } from "../Pages/Payment_page";
 import { SignInPage } from "../Pages/SignIn_page";
 import { SignUpPage } from "../Pages/SignUp_page";
 
+import { Carbook } from '../Components/Carbook/Carbook'
+// import {Reservesection} from "../Pages/Reservesection"
+
+
 export function RoutesPage() {
     return (
         
@@ -20,6 +24,9 @@ export function RoutesPage() {
                 <Route path="/signUp" element={<SignUpPage />}></Route>
                 <Route path="/signIn" element={<SignInPage />} ></Route>
                 <Route path="/payment" element={<PaymentPage />}></Route>
+                <Route path='/carlist' element={<Carbook/>}></Route>
+                {/* <Route path='/carReserve' element={<Reservesection/>}></Route> */}
+
             </Routes>
             <Footer />
         </div>

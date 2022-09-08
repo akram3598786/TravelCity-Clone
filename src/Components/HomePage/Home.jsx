@@ -23,6 +23,7 @@ export function HomePage() {
                     </div>
                 </div>
             </div>
+            
             <div className={styles.info1}>
                 <div className={styles.info1InnerDiv}>
                     <div style={{ width: '50%' }}>
