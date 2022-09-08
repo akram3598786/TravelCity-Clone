@@ -151,7 +151,23 @@ export default function ScrollableTabsButtonForce() {
         setFlightLeavingVal(data);
     }
     const handleHotelSearch = () => {
-        navigate("/hotels");
+
+        if (goingToVal === "Goa") {
+            navigate("/hotels")
+        } else if(goingToVal === "Delhi"){
+            navigate("/carlist");
+        }else{
+            alert("Kindly Select Available Point !")
+        }
+        const obj = {
+            goingToVal: goingToVal,
+            startDate: startDate,
+            endDate: endDate,
+            trevelersRoomCnt: trevelersRoomCnt,
+        }
+        // console.log(obj)
+        localStorage.setItem('inputsData', JSON.stringify(obj));
+        // navigate("/hotels");
     }
 
     const handleAdulTrevelersCnt = (e, val) => {
@@ -355,10 +371,10 @@ export default function ScrollableTabsButtonForce() {
                             <input ref={searchRef} value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" className={styles.searchInput} placeholder="Where are you going?" />
                             <div className={styles.searchResultHight}>
                                 <div className={styles.SearchResult}>
-                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleFlightLeavingCloseSearchPopup("Mumbai", e) }}>
+                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleFlightLeavingCloseSearchPopup("Delhi", e) }}>
                                         <RestoreIcon className={styles.searchIcon} />
                                         <div className={styles.SearchResultsMapping}>
-                                            <strong>Mumbai</strong>
+                                            <strong>Delhi</strong>
                                             <div>IN</div>
                                         </div>
                                     </div>
@@ -393,10 +409,10 @@ export default function ScrollableTabsButtonForce() {
                             <input ref={searchRef} value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" className={styles.searchInput} placeholder="Where are you going?" />
                             <div className={styles.searchResultHight}>
                                 <div className={styles.SearchResult}>
-                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Mumbai", e) }}>
+                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Delhi", e) }}>
                                         <RestoreIcon className={styles.searchIcon} />
                                         <div className={styles.SearchResultsMapping}>
-                                            <strong>Mumbai</strong>
+                                            <strong>Delhi</strong>
                                             <div>IN</div>
                                         </div>
                                     </div>
@@ -447,10 +463,10 @@ export default function ScrollableTabsButtonForce() {
                             <input ref={searchRef} value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" className={styles.searchInput} placeholder="Where are you going?" />
                             <div className={styles.searchResultHight}>
                                 <div className={styles.SearchResult}>
-                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Mumbai", e) }}>
+                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Delhi", e) }}>
                                         <RestoreIcon className={styles.searchIcon} />
                                         <div className={styles.SearchResultsMapping}>
-                                            <strong>Mumbai</strong>
+                                            <strong>Delhi</strong>
                                             <div>IN</div>
                                         </div>
                                     </div>
@@ -514,10 +530,10 @@ export default function ScrollableTabsButtonForce() {
                             <input ref={searchRef} value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" className={styles.searchInput} placeholder="Where are you going?" />
                             <div className={styles.searchResultHight}>
                                 <div className={styles.SearchResult}>
-                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Mumbai", e) }}>
+                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Delhi", e) }}>
                                         <RestoreIcon className={styles.searchIcon} />
                                         <div className={styles.SearchResultsMapping}>
-                                            <strong>Mumbai</strong>
+                                            <strong>Delhi</strong>
                                             <div>IN</div>
                                         </div>
                                     </div>
@@ -629,10 +645,10 @@ export default function ScrollableTabsButtonForce() {
                             <input ref={searchRef} value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" className={styles.searchInput} placeholder="Where are you going?" />
                             <div className={styles.searchResultHight}>
                                 <div className={styles.SearchResult}>
-                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Mumbai", e) }}>
+                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Delhi", e) }}>
                                         <RestoreIcon className={styles.searchIcon} />
                                         <div className={styles.SearchResultsMapping}>
-                                            <strong>Mumbai</strong>
+                                            <strong>Delhi</strong>
                                             <div>IN</div>
                                         </div>
                                     </div>
@@ -693,10 +709,10 @@ export default function ScrollableTabsButtonForce() {
                             <input ref={searchRef} value={query} onChange={(e) => { setQuery(e.target.value) }} type="text" className={styles.searchInput} placeholder="Where are you going?" />
                             <div className={styles.searchResultHight}>
                                 <div className={styles.SearchResult}>
-                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Mumbai", e) }}>
+                                    <div className={styles.SearchResultIndividual} onClick={(e) => { handleCloseLocation("Delhi", e) }}>
                                         <RestoreIcon className={styles.searchIcon} />
                                         <div className={styles.SearchResultsMapping}>
-                                            <strong>Mumbai</strong>
+                                            <strong>Delhi</strong>
                                             <div>IN</div>
                                         </div>
                                     </div>
