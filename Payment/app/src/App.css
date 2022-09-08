@@ -1,38 +1,121 @@
 .App {
-  text-align: center;
+  font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+  margin: 0 172px 0 172px;
+}
+* {
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+h1 {
+  font-size: 25px;
+  text-align: start;
+  background-color: #ededed;
+  color: #004074;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  height: 34px;
 }
+.two {
+  text-align: start;
+  color: #1f1f1f;
+  background-color: #ffffff;
+  border-radius: 0px 0px 3px 3px;
+  box-shadow: none;
+  position: color #1f1f1f1f;
+  width: 100%;
+}
+body {
+  background-color: #ededed;
+  fill: #616161;
+}
+label {
+  margin-left: 25px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-weight: bold;
+}
+.two > div {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+.three {
+  width: 100%;
+  text-align: start;
+  /* fill: #1f1f1f; */
+  background-color: #ffffff;
+  border-radius: 3px 3px 0px 0px;
+  margin-top: 5px;
+  padding: 5px 0px 5px 20px;
+}
+.three > h2 {
+  /* font-size: 20px;
+  font-weight: 500px; */
+  width: 100%;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.1764705882352942em;
+  color: #202843;
+}
+.container {
+  width: 764px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.container2 {
+  width: 764px;
+  padding: 1.05882353em;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: flex-start;
+}
+.four {
+  display: flex;
+  flex-direction: column;
+}
+.four > p {
+  margin: 5px;
+}
+.five {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+}
+.five > select {
+  width: 180px;
+  height: 2.11764706rem;
+  border-color: #858585;
+  border-radius: 3px;
+  padding: 0.35294118rem 0.70588235rem;
+  font-size: 0.88235294rem;
+  line-height: 1.2;
+  padding-right: 1.76470588rem;
+  margin-left: 27px;
+
+  background-size: 1.29411765rem 0.47058824rem, auto;
+  background-repeat: no-repeat, repeat-x;
+  background-color:#f5f5f5;
+
+}
+.six {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 36px;
 }
 
-.App-link {
-  color: #61dafb;
+.seven {
+  display: flex;
+  flex-direction: column;
+   width: 50%;
+  height: 36px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.eight {
+  display: flex;
+  flex-direction: column;
+   width: 50%;
+  height: 36px;
 }
+
+
