@@ -150,8 +150,8 @@ export default function ScrollableTabsButtonForce() {
         setFlightLeavingSearchPopup("none");
         setFlightLeavingVal(data);
     }
-
     const handleHotelSearch = () => {
+
         if (goingToVal === "Goa") {
             navigate("/hotels")
         } else if(goingToVal === "Delhi"){
@@ -551,6 +551,7 @@ export default function ScrollableTabsButtonForce() {
                                             </div>
                                         </div>
                                     })
+                                    
                                 }
                             </div>
                         </div>
