@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import { TextField, Divider, makeStyles } from "@material-ui/core";
+import SearchIcon from '@mui/icons-material/Search';
 
 const useStyles = makeStyles({
   input: {
-    background: "white",
+     background: "white",
   },
+  // inputlabel:{
+  //   background: "white",
+  //   display : "flex",
+  //   justifyContent : "center",
+  // }
 });
 
 const Wrapper = styled.div`
@@ -23,11 +29,12 @@ export const SearchByProperty = ({ handleQueryChange, query }) => {
   const classes = useStyles();
   return (
     <Wrapper>
-      <div className="search-title">Search by property name</div>
+      <h4 className="search-title">Search by property name</h4>
       <TextField
         className={classes.input}
         id="outlined-basic"
-        label="Property name"
+        //  label= {<p className={classes.inputlabel}> <SearchIcon/> Hotel Name</p>}
+        label = "Hotel Name"
         variant="outlined"
         color="primary"
         value={query}

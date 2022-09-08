@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import "./HotelList.scss";
 
 const Wrapper = styled.div`
   width: 95%;
-  height: 170px;
   margin: 10px;
   margin-bottom: 20px;
   border-radius: 0.5rem;
@@ -95,8 +95,10 @@ export const Hotelcard = ({ data, handleOpenHotel }) => {
             onClick={() => {
                 handleOpenHotel(data.hotelId);
             }}
+            className="HotelCard"  
         >
             <img className="card-image" src={data.images[1].url} alt="" />
+
             <div className="hotel-detail">
                 <div className="hotel-name-add">
                     <h3 className="hotel-name">{data.name}</h3>

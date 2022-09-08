@@ -13,7 +13,7 @@ import person from "../../Resources/person.png";
 import milege from "../../Resources/milege.png";
 import starPng from "../../Resources/star.png";
 import flight from "../../Resources/flight.png";
-
+// import BarcodeSection from "../../Resources/Barcodesection.PNG";
 
 const Wraper = styled.div`
 gap : 20px;
@@ -259,7 +259,13 @@ const handleClickCar = ()=>{
                 </div>
                 {/*  */}
                 <img src="https://tpc.googlesyndication.com/simgad/6177323794858097722?" alt="" style={{marginLeft : "20px"}} className="ad-img"/>
+                
             </Wraper>
+
+            {/* <div className="BarcodeSection">
+                    <p>The makes/models shown are examples only. We are unable to guarantee a specific make/model. Actual makes/models are subject to availability and vary by rental car company</p>
+                <img src={BarcodeSection} alt="" />
+                </div> */}
             
         </div>
     )

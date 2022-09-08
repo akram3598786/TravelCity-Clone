@@ -1,3 +1,4 @@
+import "./HotelList.scss";
 import { Hotelcard } from "./HotelCard";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -18,6 +19,7 @@ import {
 import { useCallback } from "react";
 import { SearchByProperty } from "./Filters/SearchByProperty";
 import { PopularFilter } from "./Filters/PopularFilter";
+// import { SliderRange } from "./Filters/SliderRange";
 import { GuestRating } from "./Filters/GuestRating";
 import { PaymentType } from "./Filters/PaymentType";
 import { PropertyType } from "./Filters/PropertyType";
@@ -26,11 +28,16 @@ import { Mealplans } from "./Filters/MealPlans";
 // import { useHistory } from "react-router-dom";
 // import { useAxios } from "../../Hooks/useAxios";
 import { useNavigate } from "react-router-dom";
+// import ScrollableTabsButtonForce from "../HomePage/Slider";
 
 const useStyle = makeStyles({
   button: {
     margin: "10px 10px 0 0",
     background: "white",
+    border:"0.1px solid grey",
+    padding : "6ppx 0px"
+    // width:"10px"
+    
   },
 
   selected: {
@@ -84,11 +91,26 @@ export const HotelList = () => {
 
   useEffect(() => {
     getData();
-    console.log(hotels);
+    // console.log(hotels);
   }, []);
 
-  const handleQueryChange = (val) => {
-    setSearchQuery(val);
+  const handleQueryChange = (value) => {
+
+    searchHotels(value)
+    setSearchQuery(value);
+  
+    function searchHotels(searchValue){
+      searchValue = searchValue.toLowerCase();
+      var SearchedData  = hotels.filter(function(hotel){
+          if(hotel.name.toLowerCase().includes(searchValue)){
+          return true;
+          }
+          return false;
+      })
+
+      if(SearchedData.length==0 || value ==="") getData();
+       else setHotels(SearchedData)
+      }
   };
 
   const handleChange = (event) => {
@@ -112,7 +134,8 @@ export const HotelList = () => {
   const getData = () => {
     setloading(true);
     axios
-      .get("https://my-api-data.herokuapp.com/data")
+      // .get("https://my-api-data.herokuapp.com/data")
+      .get("https://carapi20.herokuapp.com/hotel")
       .then((res) => {
         const { data } = res;
         setData(data);
@@ -149,9 +172,13 @@ export const HotelList = () => {
       window.scrollTo(0, 0);
     }, []);
 
+    // import
+
   return (
     <>
-      <Wrapper>
+     {/* <ScrollableTabsButtonForce /> */}
+      <Wrapper className="Wrapper">
+    
         <div className="sorting">
           <SearchByProperty
             handleQueryChange={handleQueryChange}
@@ -259,6 +286,7 @@ export const HotelList = () => {
             </FormControl>
           </div>
           <PopularFilter />
+          {/* <SliderRange /> Not working */}
           <GuestRating />
           <PaymentType />
           <PropertyType />
@@ -281,12 +309,13 @@ export const HotelList = () => {
                   handleOpenHotel={handleOpenHotel}
                   key={item.hotelId}
                   data={item}
+                  
                 />
               );
             })
           )}
         </div>
-        <div>
+        <div className="advSection">
           <Ads />
           <Ads />
         </div>

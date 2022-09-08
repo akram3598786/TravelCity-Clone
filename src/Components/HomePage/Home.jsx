@@ -2,28 +2,29 @@ import React, { useEffect } from 'react';
 import styles from "./Home.module.scss";
 import ScrollableTabsButtonForce from './Slider';
 import Grid from '@material-ui/core/Grid';
+import BarcodeSection from "../../Resources/Barcodesection.PNG";
 
 export function HomePage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    },[])
+    }, [])
 
     return (
         <div className={styles.container}>
             <div className={styles.forms}>
-                <div style={{marginRight: "10px"}}>
+                <div style={{ marginRight: "10px" }}>
                     <div className={styles.formsContainer}>
                         <ScrollableTabsButtonForce />
                     </div>
                     <div className={styles.offerTop}>
                         <h3>Savor the Sun Sale</h3>
                         <p>Soak up the last rays of the season with a family getaway. Take 20% off or more on select hotels right now!</p>
-                        <button>Explore Details</button>
+                        <button style={{"font-weight" : "bold" }}>Explore Details</button>
                     </div>
                 </div>
             </div>
-            
+
             <div className={styles.info1}>
                 <div className={styles.info1InnerDiv}>
                     <div style={{ width: '50%' }}>
@@ -56,14 +57,14 @@ export function HomePage() {
                         <div className={styles.info2RightDiv}>
                             <div className={styles.info2Right} style={{ marginBottom: "10px" }}>
                                 <div className={styles.info2RightImg1}></div>
-                                <div style={{ width: "70%"}}>
+                                <div style={{ width: "70%" }}>
                                     <h2>Looking for a great hotel deal?</h2>
                                     <p>Book a hotel under $99</p>
                                 </div>
                             </div>
                             <div className={styles.info2Right}>
                                 <div className={`${styles.info2RightImg1} ${styles.info2RightImg2}`}></div>
-                                <div style={{ width: "70%"}}>
+                                <div style={{ width: "70%" }}>
                                     <h2>Vacation Packages Under $400</h2>
                                     <p>Book your flight and hotel together, and together, we can make it happen.</p>
                                 </div>
@@ -116,7 +117,12 @@ export function HomePage() {
                         <p>Traveling now or planning a trip for later? Let us help.</p>
                     </div>
                 </div>
-            </div> 
+                <div className={styles.BarcodeSection}>
+                <img src={BarcodeSection} alt="" />
+                </div>
+            </div>
+    
+
         </div>
     );
 }
