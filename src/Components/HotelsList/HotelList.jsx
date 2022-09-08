@@ -302,7 +302,7 @@ export const HotelList = () => {
               <img src={logo} alt="" />
               <CircularProgress />
             </div>
-          ) : (
+          ) : hotels.length>=1 ? (
             hotels.map((item) => {
               return (
                 <Hotelcard
@@ -313,7 +313,8 @@ export const HotelList = () => {
                 />
               );
             })
-          )}
+          ) : (<h1 style={{color : "red", textAlign:"center", marginTop:"300px"}}>No hotels exist !</h1>)
+        }
         </div>
         <div className="advSection">
           <Ads />
