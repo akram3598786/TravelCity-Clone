@@ -2,15 +2,14 @@ import React from 'react'
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material"
 import styled from '@emotion/styled'
 
+
+const Form = styled(FormControlLabel)`
+font-size : 10px;
+`
 const Wraper = styled.div`
 
 display :flex;
-FormControlLabel{
-    line-height: 1;
-    margin-right: 100px;
-    color : #505c66;
-    
-}
+
 .fromgrp{
     color : #505c66;
     font-size : 2px
@@ -20,43 +19,47 @@ FormControlLabel{
     margin-top: 31px;
     margin-left: 80px;
     color : #505c66;
-    
+   
 }
+.FormControlLabel{
+    font-size:5px;
+}
+
 .h4-tag{
     margin-left: 80px;
+   
 }
 
 `
 const Wraper1 = styled.div`
     display : flex;
     justify-content: space-between;
-    width : 18%;
+    
     p{
         color : #505c66
     }
     `
 
 export const Filter = () => {
-const [carSearch,setCarSearch] = React.useState("");
-
-const handleChang = (e)=>{
-    setCarSearch(e.target.value)
-    console.log(carSearch)
-}
+    const [economy, setEconomy] = React.useState("")
+    const handleChang = (e) => {
+        setEconomy(e.target.value)
+       
+    }
 
     return (
         <div className='filter-div'>
 
-           <h3>Filter by</h3>
+            <h3>Filter by</h3>
             <Wraper>
                 <div>
                     <h4>Car Type</h4>
-                    <FormGroup className='fromgrp' 
-                    name = "search"
-                    value ={carSearch}
-                    onChange={handleChang}
+                    <FormGroup className='fromgrp'
+                        name="search"
+                        value={economy}
+                        onChange={(e) => handleChang(e)}
                     >
-                        <FormControlLabel control={<Checkbox />} label="Economy (12)" />
+                        <Form control={<Checkbox />} label="Economy (12)" value="economy" style={{fontSize:"5px"}}/>
                         <FormControlLabel control={<Checkbox />} label="Compact (12)" />
                         <FormControlLabel control={<Checkbox />} label="Midsize (13)" />
                         <FormControlLabel control={<Checkbox />} label="Standard (12)" />
@@ -97,7 +100,7 @@ Minivan (10)" />
                 </div>
             </Wraper>
 
-            {/* <Wraper1>
+            <Wraper1>
 
 
                 <FormGroup>
@@ -188,7 +191,7 @@ Pay later (139)" />
                         <p>$59</p>
                     </div>
                 </div>
-            </Wraper1> */}
+            </Wraper1>
         </div>
     )
 }

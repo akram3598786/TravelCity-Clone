@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { Filter } from '../Filters/Filter'
+import { Filter } from '../Filters/CarFilter'
 import { Ads } from './Ads'
 import { MidCar } from './MidCar'
 const CardetailsSection = styled.div`
@@ -30,19 +30,22 @@ justify-content : space-between;
 
 
 export const Carbook = () => {
+  const [carData,setCarData] = React.useState([])
+console.log(carData)
   return (
-    <div style={{backgroundColor : "#F5F5F5"}}>
-       
-        <CardetailsSection>
-             <div id='left'><Filter/></div>
-             <div className='mid' >
-              <MidCar/>
-             </div>
-             <div id='right'>
-              <Ads/>
-             </div>
-        </CardetailsSection>
-        
+
+    <div style={{ backgroundColor: "#F5F5F5" }}>
+
+      <CardetailsSection>
+        <div id='left'><Filter /></div>
+        <div className='mid' >
+          <MidCar />
+        </div>
+        <div id='right'>
+          <Ads />
+        </div>
+      </CardetailsSection>
+
     </div>
   )
 }
