@@ -12,10 +12,10 @@
 ## deployed link here 
 
 ## Team Members
-> ### •[Akram Ali](https://github.com/akram3598786)
-> ### •[Vishal Karale](https://github.com/vishalvsk)
-> ### • [Mohit Sharma](https://github.com/mohitsharma9001)
-> ### • [Chandan Giri](https://github.com/chandan0c)
+> ## Github :- •[Akram Ali](https://github.com/akram3598786)
+> ## Github :-•[Vishal Karale](https://github.com/vishalvsk)
+> ## Github :- •[Mohit Sharma](https://github.com/mohitsharma9001)
+> ## Github :-•[Chandan Giri](https://github.com/chandan0c)
 
 
 ## Built with
