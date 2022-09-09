@@ -1,6 +1,6 @@
 # Travelocity Clone
 
-** This is the clone of the Travelocity website. Travelocity.com is a leading online travel Web site where travelers can make airline, hotel, and car rental reservations, book cruises and vacation packages, find information about destinations, and access a range of other travel-related services.**
+**This is the clone of the Travelocity website. Travelocity.com is a leading online travel Web site where travelers can make airline, hotel, and car rental reservations, book cruises and vacation packages, find information about destinations, and access a range of other travel-related services.**
 
 
 **To see the live site click the below link.**
