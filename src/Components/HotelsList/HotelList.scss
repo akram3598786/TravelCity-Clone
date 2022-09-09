@@ -1,5 +1,11 @@
 @import "../../globlal.scss";
 
+.inputHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 .Wrapper{
 
    @include mobile{

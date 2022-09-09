@@ -28,7 +28,8 @@ import { Mealplans } from "./Filters/MealPlans";
 // import { useHistory } from "react-router-dom";
 // import { useAxios } from "../../Hooks/useAxios";
 import { useNavigate } from "react-router-dom";
-// import ScrollableTabsButtonForce from "../HomePage/Slider";
+ import ScrollableTabsButtonForce from "../HomePage/Slider";
+import HeaderInput from "./HeaderInput";
 
 const useStyle = makeStyles({
   button: {
@@ -176,7 +177,8 @@ export const HotelList = () => {
 
   return (
     <>
-     {/* <ScrollableTabsButtonForce /> */}
+     <ScrollableTabsButtonForce />
+     {/* <HeaderInput/> */}
       <Wrapper className="Wrapper">
     
         <div className="sorting">

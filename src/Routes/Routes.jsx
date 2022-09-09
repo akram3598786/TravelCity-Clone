@@ -9,7 +9,8 @@ import { SignInPage } from "../Pages/SignIn_page";
 import { SignUpPage } from "../Pages/SignUp_page";
 
 import { Carbook } from '../Components/Carbook/Carbook'
-// import {Reservesection} from "../Pages/Reservesection"
+import { Carsection } from "../Pages/Carsection";
+import { Reserv } from "../Components/ReserveCar/Reserv";
 
 
 export function RoutesPage() {
@@ -24,8 +25,8 @@ export function RoutesPage() {
                 <Route path="/signUp" element={<SignUpPage />}></Route>
                 <Route path="/signIn" element={<SignInPage />} ></Route>
                 <Route path="/payment" element={<PaymentPage />}></Route>
-                <Route path='/carlist' element={<Carbook/>}></Route>
-                {/* <Route path='/carReserve' element={<Reservesection/>}></Route> */}
+                <Route path='/carlist' element={<Carsection/>}></Route>
+                <Route path='/carreserve/:id' element={<Reserv/>}></Route>
 
             </Routes>
             <Footer />

@@ -247,7 +247,7 @@ const handleClickCar = ()=>{
                                 <h3 style={{ color: "#505c66" }}>${data.price}</h3>
                                 <p>per day </p>
 
-                               <Link to="/"><Button onClick={() => handleReserve(data.id)} >Reserve</Button></Link> 
+                               <Link to={`/carreserve/${data.id}`}><Button onClick={() => handleReserve(data.id)} >Reserve</Button></Link> 
                             </div>
                             
                         </CarDiv>
