@@ -50,7 +50,7 @@
   <li>Filter hotels list by their ratings, hotel name and price etc.</li>
 </ul>
 
-## Some screenshots of the project
+## Some screenshots of the project :- 
 <img src="https://i.ibb.co/ZYBmbmX/Screenshot-from-2022-06-30-10-24-04.png" />
 <img src="https://i.ibb.co/cYj9ngp/Screenshot-from-2022-06-30-11-32-25.png" />
 <img src="https://i.ibb.co/xfxs9t7/Screenshot-from-2022-06-30-11-36-59.png" />
