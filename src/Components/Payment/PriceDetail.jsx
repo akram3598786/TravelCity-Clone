@@ -1,4 +1,5 @@
 import { Divider } from "@material-ui/core";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -43,23 +44,35 @@ const Wrapper = styled.div`
 `;
 
 export const PriceDetail = ({ price }) => {
+
+  const paymentAmount = useSelector((state)=>state.paymentAmount);
+  // console.log(paymentAmount)
+
+  let {type,tax, Price} = JSON.parse(localStorage.getItem("PriceDetails"));
     return (
         <Wrapper>
             <p className="title">Price Details</p>
             <Divider />
-            <div className="room-detail">
-                <p>1 room x 1 night</p>
-                <p>${price - 29}</p>
-            </div>
+            {type==="car" ? 
+             <div className="room-detail">
+             <p>Booked Price</p>
+             <p>${Price}</p>
+         </div> :
+             <div className="room-detail">
+             <p>1 room x 1 night</p>
+             <p>${Price}</p>
+         </div>
+          }
+           
             <div className="save">You saved 10%</div>
             <div className="taxes">
                 <p>Taxes and fees</p>
-                <p>${29}</p>
+                <p>${tax}</p>
             </div>
             <Divider />
             <div className="total">
                 <p>Total</p>
-                <p>${price}</p>
+                <p>${Price + tax}</p>
             </div>
             <p className="coupon">Use a coupon, credit, or promotion code</p>
         </Wrapper>

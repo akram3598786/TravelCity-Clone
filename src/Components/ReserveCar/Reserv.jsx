@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom';
+
 const CompleateDiv = styled.div`
 width : 80%;
 margin : auto;
@@ -117,51 +118,62 @@ margin-left : 5px;
 export const Reserv = () => {
     const [loding, setLoding] = React.useState(false)
     const [error, setError] = React.useState(false)
-    const [carData, setCarData] = React.useState([]);
-    const {carId} = useParams()
+    const [carData, setCarData] = React.useState({});
+    const {id} = useParams();
+    const navigate = useNavigate();
+    let taxPrice = 5;
    
     React.useEffect(() => {
         getData()
     }, [])
     const getData = () => {
-        
-    console.log(carId)
         setLoding(true)
-        fetch(`https://carapi20.herokuapp.com/Car/${carId}`)
+        fetch(`https://carapi20.herokuapp.com/Car/${id}`)
             .then((res) => res.json())
-            .then((res) => console.log(res))
+            .then((res) => setCarData(res))
             .catch((err) => setError(true))
             .finally(() => setLoding(false))
     }
-// console.log(carData)
+
+    const handleReserve=()=>{
+        // let totalCarPrice = (5+carData.price);
+        let paymentDet = {
+            type : "car",
+            tax : 5,
+            Price : carData.price
+        }
+        localStorage.setItem("PriceDetails",JSON.stringify(paymentDet));
+        navigate("/payment")
+    }
+
     return (
         <div>
             <CompleateDiv>
                 <div>
                     <ReservFlex>
 
-
                         <ReserveDiv>
                             <button style={{ height: "24px", width: "74px", backgroundColor: "#1f7d57", fontSize: "12px", color: "white", borderRadius: "3px", border: "none", marginTop: "15px", marginLeft: "20px" }}>Great Deal</button>
 
                             <div className='top-section' style={{ padding: "10px" }}>
                                 <div>
-                                    <h3>Compact</h3>
-                                    <p>Ford Figo</p>
-                                    <p>5 Passenger</p>
+                                    <h3>{carData.car_type}</h3>
+                                    <p>{carData.car_name}</p>
+                                    <p>{carData.capacity} Passenger</p>
                                     <p>Air Conditioning</p>
                                     <p>Unlimited mileage</p>
                                     <p style={{ color: "#0D5AB9", marginLeft: "5px", textDecoration: "underline", cursor: "pointer" }}>See more</p>
                                 </div>
                                 <div>
-                                    <p>Ford Figo</p>
-                                    <p>5 Passenger</p>
+                                    <p>{carData.car_name}</p>
+                                    <p>{carData.capacity} Passenger</p>
                                     <p>Air Conditioning</p>
                                     <p>Unlimited mileage</p>
                                     <p style={{ color: "#0D5AB9", marginLeft: "5px", textDecoration: "underline", cursor: "pointer" }}>See more</p>
                                 </div>
                                 <div>
-                                    <img src="https://mediaim.expedia.com/cars/40/3a591a6a-3820-47f4-ae4e-569400f1ed87.jpg?impolicy=resizecrop&ra=fit&rh=165&rw=165" alt="" />
+                                    {/* <img src="https://mediaim.expedia.com/cars/40/3a591a6a-3820-47f4-ae4e-569400f1ed87.jpg?impolicy=resizecrop&ra=fit&rh=165&rw=165" alt="" /> */}
+                                    <img src={carData.url} alt="" />
                                 </div>
                             </div>
 
@@ -177,7 +189,7 @@ export const Reserv = () => {
                                 <p>Best rated for convenient pick-up location and short wait time</p>
                             </div>
                             <div style={{ padding: "5px" }}>
-                                <img src="https://mediaim.expedia.com/cars/logos/ZE.png" alt="" />
+                                <img src={carData.img_url} alt="" />
                                 <p style={{ color: "#0D5AB9", marginLeft: "5px", textDecoration: "underline", cursor: "pointer" }}>452 Rating </p>
                             </div>
                         </div>
@@ -226,7 +238,7 @@ export const Reserv = () => {
                 <div className='side-div'>
                     <div >
                         <div className='reserveflex'>
-                            <h3 style={{ padding: "15px" }}>$58
+                            <h3 style={{ padding: "15px" }}>${carData.price}
                             </h3>
                             <p style={{ marginTop: "-10px", marginLeft: "10px" }}>Per day</p>
                             <p style={{ marginLeft: "10px" }}>Non-refundable
@@ -240,14 +252,18 @@ export const Reserv = () => {
                             <h3>Pay Now</h3>
                             <div style={{ display: "flex", justifyContent: "space-between" }}>
                                 <p>Car rental fee x 1 day</p>
-                                <p>$58</p>
+                                <p>${carData.price}</p>
+                            </div>
+                            <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <p>Extra Tax</p>
+                                <p>${taxPrice}</p>
                             </div>
                             <hr />
                             <div style={{ display: "flex", justifyContent: "space-between" }}>
                                 <h3>Total</h3>
-                                <h3>$58</h3>
+                                <h3 style={{"font-weight" : "bold"}}>${carData.price + taxPrice}</h3>
                             </div>
-                            <Button  >Reserve</Button>
+                            <Button onClick={()=>handleReserve()} >Reserve</Button>
                         </div>
 
                         <div className='great-deal'>
