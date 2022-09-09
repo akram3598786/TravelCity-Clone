@@ -122,6 +122,8 @@ export const Reserv = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     let taxPrice = 5;
+
+    let inputsData = JSON.parse(localStorage.getItem("inputsData"));
    
     React.useEffect(() => {
         getData()
@@ -200,16 +202,16 @@ export const Reserv = () => {
                             <div>
                                 <h3>Pick Up</h3>
                                 <p>Fri, Sep 23, 10:30am</p>
-                                <p>DAL Airport
+                                <p>IGI Airport
                                     7212 Dallas Love Field Airport, Cedar <br />
-                                    Springs Road, Dallas, Texas, USA 75235-2889</p>
+                                    Springs Road, Dallas, {inputsData.goingToVal}, India 75235-2889</p>
                                 {/* <p style={{fontSize : "13px"}}>Counter in terminal,  free shuttle to the car located in the airport.</p> */}
                             </div>
                             <div>
                                 <h3>Drop-Off</h3>
                                 <p>Sat, Sep 24, 10:30am</p>
-                                <p>DAL Airport
-                                    7212 Dallas Love Field Airport, <br /> Cedar Springs Road, <br /> Dallas, Texas, USA 75235-2889</p>
+                                <p>Amrit Chowk
+                                     Love Field Park, <br /> Cedar Springs Road, <br /> Jaipur, Rajasthan, India 75235-2889</p>
                             </div>
                         </div>
 
