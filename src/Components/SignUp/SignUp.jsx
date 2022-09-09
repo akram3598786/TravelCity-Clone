@@ -98,41 +98,19 @@ export const SignUp = () => {
         setState({ ...state, [name]: value });
     };
 
-
     const handleSubmit =  (e) => {
         e.preventDefault();
         // console.log(state)
         axios
-        .post("http://localhost:8080/users",state)
+        // .post("http://localhost:8080/users",state)
+        .post("https://carapi20.herokuapp.com/users",state)
         .then((response)=>{
             // console.log(response.status)
             // history.push("/signIn");
+            alert("Registered Successfully");
             navigate("/signIn")
         })
-        .catch((err)=>console.log(err))
-
-        /*
-        let isPresent = false;
-
-        for (let i = 0; i < data.length; i++) {
-            if (state.email === data[i].email) {
-                isPresent = true;
-                break;
-            }
-        }
-
-        if (state.password === state.password2) {
-            if (isPresent) {
-                swal("User already exists with this email!");
-            } else {
-                axios.post("http://localhost:3001/users", state);
-                swal("Successfully signed up. Sign In to continue!");
-                history.push("/signIn");
-            }
-        } else {
-            swal("Password does not match!");
-        }
-        */
+        .catch((err)=>alert("Something went wrong !"))
     };
 
     return (

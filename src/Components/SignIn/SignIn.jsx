@@ -113,19 +113,22 @@ export const SignIn = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { data } = await axios.get(
-            `http://localhost:8080/users/?email=${input.email}`
+        const  {data}  = await axios.get(
+            // `http://localhost:8080/users/?email=${input.email}`
+            `https://carapi20.herokuapp.com/users/?email=${input.email}`
         );
-        console.log(data)
+        // console.log(data);
 
-        if (data[0] === undefined || data[0].password !== input.password) {
-            swal("Invalid Credentials!");
-            dispatch(loginFailure());
-        } else {    
-            dispatch(loginSuccess(data[0].firstName));
+        if(data.email === input.email  && data.password === input.password) {
+
+            dispatch(loginSuccess(data.firstName));
             swal("Logged in successfully");
             // history.push("/");
             navigate("/");
+           
+        } else {    
+            swal("Invalid Credentials!");
+            dispatch(loginFailure());
         }
     };
 
