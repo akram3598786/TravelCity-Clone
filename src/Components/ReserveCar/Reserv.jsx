@@ -1,6 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { useNavigate, useParams } from 'react-router-dom';
+import "./Reserv.scss";
+import DoorSlidingIcon from '@mui/icons-material/DoorSliding';
+import HubIcon from '@mui/icons-material/Hub'; //manual
+import EvStationIcon from '@mui/icons-material/EvStation'; //fuel
+import Person2Icon from '@mui/icons-material/Person2';
+import AirlinesIcon from '@mui/icons-material/Airlines'; //air cond
+import CloudOffIcon from '@mui/icons-material/CloudOff'; // milege
 
 const CompleateDiv = styled.div`
 width : 80%;
@@ -160,17 +167,23 @@ export const Reserv = () => {
                             <div className='top-section' style={{ padding: "10px" }}>
                                 <div>
                                     <h3>{carData.car_type}</h3>
-                                    <p>{carData.car_name}</p>
-                                    <p>{carData.capacity} Passenger</p>
-                                    <p>Air Conditioning</p>
-                                    <p>Unlimited mileage</p>
+                                    <p id='Carname'> {carData.car_name}</p>
+                                    <div>
+                                    <span><Person2Icon/></span><div id='infor'><p>{carData.capacity} Passenger</p></div>
+                                    </div>
+                                    <div><span><AirlinesIcon/></span><p>Air Conditioning</p></div>
+                                    <div><span><CloudOffIcon/></span><p>Unlimited mileage</p></div>
+                                    
+                                    
                                     <p style={{ color: "#0D5AB9", marginLeft: "5px", textDecoration: "underline", cursor: "pointer" }}>See more</p>
                                 </div>
                                 <div>
-                                    <p>{carData.car_name}</p>
-                                    <p>{carData.capacity} Passenger</p>
-                                    <p>Air Conditioning</p>
-                                    <p>Unlimited mileage</p>
+                                <div><span><DoorSlidingIcon/></span><p>5 Doors</p></div>
+                                <div><span><HubIcon/></span><p>Manual</p></div>
+                                <div><span><EvStationIcon/></span><p>Fuel info: full to full</p></div>
+                                    
+                                
+                                   
                                     <p style={{ color: "#0D5AB9", marginLeft: "5px", textDecoration: "underline", cursor: "pointer" }}>See more</p>
                                 </div>
                                 <div>
