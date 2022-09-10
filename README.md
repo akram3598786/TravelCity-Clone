@@ -60,9 +60,9 @@
 <img src="https://i.ibb.co/ZYBmbmX/Screenshot-from-2022-06-30-10-24-04.png" />
 <img src="https://i.ibb.co/cYj9ngp/Screenshot-from-2022-06-30-11-32-25.png" />
 <img src="./public/images/carpage.png" />
-<img src="./public/images/googlepage.png.png" />
-<img src="./public/images/hotelpage.png.png" />
-<img src="./public/images/sign in page.png.png" />
+<img src="./public/images/googlepage.png" />
+<img src="./public/images/hotelpage.png" />
+<img src="./public/images/sign in page.png" />
 <img src="https://i.ibb.co/QYw37RH/Screenshot-from-2022-06-30-11-35-03.png" />
 <img src="https://i.ibb.co/MMVbn9k/Screenshot-from-2022-06-30-11-18-39.png" />
 
