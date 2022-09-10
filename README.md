@@ -4,9 +4,7 @@
 
 **To see the live site click the below link.**
 
-""
-
-**To see the Demo Video of Website click the below link.** - •[Travelocity](https://travelcity-clone.netlify.app/)
+ **•[Travelocity](https://travelcity-clone.netlify.app/)**
 
 ## deployed link here
 
