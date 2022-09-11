@@ -63,17 +63,35 @@
 
 ## Some screenshots of the project :-
 
+## Home Page
+
 <img src="./public/images/Homepage.PNG" />
 <img src="https://i.ibb.co/cYj9ngp/Screenshot-from-2022-06-30-11-32-25.png" />
 <img src="./public/images/Homepage-2.PNG" />
+<img src="https://i.ibb.co/MMVbn9k/Screenshot-from-2022-06-30-11-18-39.png" />
+
+## Sign In page
+
 <img src="./public/images/sign in page.png" />
 <img src="./public/images/googlepage.png" />
+
+## Hotel booking page
 <img src="./public/images/hotelpage.png" />
-<img src="./public/images/carpage.png" />
-<img src="./public/cardetail.PNG" />
-<img src="./public/images/payment.PNG" />
+
+## Hotel detail page
 <img src="https://i.ibb.co/QYw37RH/Screenshot-from-2022-06-30-11-35-03.png" />
-<img src="https://i.ibb.co/MMVbn9k/Screenshot-from-2022-06-30-11-18-39.png" />
+
+
+## Car booking page
+<img src="./public/images/carpage.png" />
+
+## Car detail page
+<img src="./public/cardetail.PNG" />
+
+## Car payment page
+<img src="./public/images/payment.PNG" />
+
+
 
 
 ### Thanks for Reading.
