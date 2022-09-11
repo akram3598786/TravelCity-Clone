@@ -67,5 +67,6 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.54.8"
-  }
+  },
+  "homepage":"."
 }
