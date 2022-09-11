@@ -65,7 +65,6 @@
 
 ## Some screenshots of the project :-
 
-<img src="https://i.ibb.co/ZYBmbmX/Screenshot-from-2022-06-30-10-24-04.png" />
 <img src="https://i.ibb.co/cYj9ngp/Screenshot-from-2022-06-30-11-32-25.png" />
 <img src="./public/images/carpage.png" />
 <img src="./public/images/googlepage.png" />
