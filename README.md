@@ -12,9 +12,9 @@
 
 > ## Github :- •[Akram Ali](https://github.com/akram3598786)
 >
-> ## Github :-•[Vishal Karale](https://github.com/vishalvsk)
->
 > ## Github :- •[Mohit Sharma](https://github.com/mohitsharma9001)
+>
+> ## Github :-•[Vishal Karale](https://github.com/vishalvsk)
 >
 > ## Github :-•[Chandan Giri](https://github.com/chandan0c)
 
@@ -26,19 +26,25 @@
   <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript</li>
-  <li>Github</li>
+  <li>JSON Server</li>
+  <li>Local Storage</li>
+  <li>Google Auth</li>
+  <li>Heroku</li>
+  <li>Postman</li>
+  <li>Netlify</li>
+  
 </ul>
 
 ## Used libraries
 
 <ul>
-  <li>node modules</li>
+  <li>Material-UI</li>
   <li>Styled-Components</li>
   <li>Redux</li>
   <li>React Js</li>
   <li>Redux</li>
   <li>React-router-dom</li>
-  <li>Material-UI</li>
+  <li>React-Redux</li>
   <li>Material-Icons</li>
   <li>React Icons</li>
 </ul>
@@ -48,9 +54,13 @@
 <ul>
   <li>Signin/Signup</li>
   <li>Hotel search across world's cities</li>
-  <li>Hotel Booking</li>
-  <li>Individual Hotel Details Pages</li>
-  <li>Filter hotels list by their ratings, hotel name and price etc.</li>
+  <li>Room Booking in hotel</li>
+  <li>Individual Hotel Details Pages with differnt rooms</li>
+  <li>Filter hotels list by their ratings, hotel name and budget range etc.</li>
+  <li>Car Serachind by date, pickup and droping time</li>
+  <li>Car Booking</li>
+  <li>Payment gateway</li>
+  <li>Responsive</li>
 </ul>
 
 ## Some screenshots of the project :-
