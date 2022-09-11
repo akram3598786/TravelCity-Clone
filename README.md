@@ -54,8 +54,8 @@
 <ul>
   <li>Signin/Signup</li>
   <li>Hotel search across world's cities</li>
-  <li>Room Booking in hotel</li>
-  <li>Individual Hotel Details Pages with differnt rooms</li>
+  <li>Room booking in hotel</li>
+  <li>Individual hotel details pages with differnt rooms</li>
   <li>Filter hotels list by their ratings, hotel name and budget range etc.</li>
   <li>Car Serachind by date, pickup and droping time</li>
   <li>Car Booking</li>
