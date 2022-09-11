@@ -86,12 +86,10 @@
 <img src="./public/images/carpage.png" />
 
 ## Car detail page
-<img src="./public/cardetail.PNG" />
+<img src="./public/images/cardetail.PNG" />
 
-## Car payment page
+## Payment page
 <img src="./public/images/payment.PNG" />
-
-
 
 
 ### Thanks for Reading.
