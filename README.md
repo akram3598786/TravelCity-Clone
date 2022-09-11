@@ -76,4 +76,6 @@
 <img src="https://i.ibb.co/QYw37RH/Screenshot-from-2022-06-30-11-35-03.png" />
 <img src="https://i.ibb.co/MMVbn9k/Screenshot-from-2022-06-30-11-18-39.png" />
 
+<p text-align="cenetr" font-weight="bold"> Thanks for Reading</p>
+
 ### Thanks for Reading.
