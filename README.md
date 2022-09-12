@@ -13,8 +13,6 @@
 > ## Github :- •[Mohit Sharma](https://github.com/mohitsharma9001)
 >
 > ## Github :-•[Vishal Karale](https://github.com/vishalvsk)
->
-> ## Github :-•[Chandan Giri](https://github.com/chandan0c)
 
 ## Built with
 
