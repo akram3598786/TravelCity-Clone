@@ -9,4 +9,3 @@ export const setData = (key, value) => {
     localStorage.setItem(key, value);
 }
 
-// console.log("data " ,data);
