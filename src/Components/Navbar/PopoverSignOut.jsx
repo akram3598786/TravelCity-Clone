@@ -36,7 +36,6 @@ export default function PopoverSignOut() {
 
   
   // console.log(userName);
-
   const handleSignOut = () => {
     dispatch(logOut());
   }
@@ -66,7 +65,8 @@ export default function PopoverSignOut() {
             <hr />
             <br />
           <h4 onClick={() => logout({ returnTo: window.location.origin })}>
-          Log Out
+          {/* <h4 onClick={() => handleSignOut()}> */}
+          Sign Out
         </h4>
         <br/>
           </div>

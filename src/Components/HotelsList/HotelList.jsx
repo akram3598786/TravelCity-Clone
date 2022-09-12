@@ -28,7 +28,7 @@ import { Mealplans } from "./Filters/MealPlans";
 // import { useHistory } from "react-router-dom";
 // import { useAxios } from "../../Hooks/useAxios";
 import { useNavigate } from "react-router-dom";
- import ScrollableTabsButtonForce from "../HomePage/Slider";
+import NativePickers from "../Carbook/HeaderInputs";
 import HeaderInput from "./HeaderInput";
 
 const useStyle = makeStyles({
@@ -177,11 +177,15 @@ export const HotelList = () => {
 
   return (
     <>
-     <ScrollableTabsButtonForce />
-     {/* <HeaderInput/> */}
+     <NativePickers/>
       <Wrapper className="Wrapper">
-    
         <div className="sorting">
+        <iframe 
+          style={{border:"1px solid grey", marginTop:"8px"}}
+          width="220"
+          height="150"
+           src={`https://maps.google.com/maps?q=Goa&t=&z=15&ie=UTF8&iwloc=&output=embed`}>
+          </iframe>
           <SearchByProperty
             handleQueryChange={handleQueryChange}
             query={searchQuery}

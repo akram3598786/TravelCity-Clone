@@ -4,6 +4,7 @@ import { Filter } from '../Filters/CarFilter'
 import { Ads } from './Ads'
 import { MidCar } from './MidCar';
 import BarcodeSection from "../../Resources/Barcodesection.PNG";
+import NativePickers from './HeaderInputs';
 import "./Carbook.scss";
 
 
@@ -33,13 +34,27 @@ justify-content : space-between;
 
 export const Carbook = () => {
   const [carData, setCarData] = React.useState([])
-  console.log(carData)
+
+  //  let Date = new Date()
+  // let mnth = Date.prototype.getMonth();
+  // let day = Date.prototype.getDay();
+  // console.log(mnth, day);
+
   return (
-
     <div style={{ backgroundColor: "#F5F5F5" }}>
-
+      <NativePickers/>
       <CardetailsSection>
-        <div id='left'><Filter /></div>
+
+        <div id='left'>
+          <iframe 
+          style={{border:"1px solid grey", marginTop:"8px"}}
+          width="230"
+          height="150"
+           src={`https://maps.google.com/maps?q=Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed`}>
+
+          </iframe>
+          <Filter />
+          </div>
         <div className='mid' >
           <MidCar />
         </div>

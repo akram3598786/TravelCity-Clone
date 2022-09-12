@@ -10,7 +10,7 @@ const initState = {
 export const Authreducer = (state = initState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
-      setData("username", action.payload);
+      // setData("username", action.payload);
       return {
         ...state,
         login: true,
@@ -23,18 +23,25 @@ export const Authreducer = (state = initState, action) => {
         login: false,
       };
     case LOG_OUT:
-      setData("username", "");
+      // setData("username", "");
       return {
         ...state,
         login: false,
         userName: "",
       };
-    case PAYMENT_TYPE:
-      console.log(action.payload);
+    case PAYMENT_TYPE:{
+   
+      let paymentDet={
+        type : "hotel",
+        tax : 8,
+        Price : action.payload 
+      }
+      localStorage.setItem("PriceDetails", JSON.stringify(paymentDet));
       return {
         ...state,
         paymentAmount: action.payload
       }
+    }
 
     default: {
       return state;

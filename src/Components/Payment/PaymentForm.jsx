@@ -72,12 +72,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const initState = {
-    name: "",
-    card: "",
-    month: "",
-    year: "",
-    cvv: "",
-    zip: "",
+    name: "Mohit Sharma",
+    card: "9001-5656-5290-7904",
+    month: "June",
+    year: "2024",
+    cvv: "001",
+    zip: "322241",
 };
 
 export const PaymentForm = () => {
@@ -148,7 +148,7 @@ export const PaymentForm = () => {
                     type="number"
                     variant="outlined"
                     name="card"
-                    value={state.card}
+                    value="9001565652907904"
                     className="name"
                     label="Debit/Credit card number"
                 />
