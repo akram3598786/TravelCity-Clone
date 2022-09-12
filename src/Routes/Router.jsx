@@ -8,6 +8,7 @@ export const Router = () => {
          <Routes>
           <Route path='/carlist' element={<Carbook/>}></Route>
           <Route path='/carReserve' element={<Reservesection/>}></Route>
+          {/* <Route path='/carReserve' element={<Reservesection/>}></Route> */}
           </Routes>   
     </div>
   )
