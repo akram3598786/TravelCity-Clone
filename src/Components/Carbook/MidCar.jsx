@@ -150,7 +150,8 @@ const [page,setPage] = React.useState(1)
     }, [page])
     const getData = () => {
         setLoding(true)
-        fetch(`https://carapi20.herokuapp.com/Car?_page=${page}&_limit=5`)
+        // fetch(`https://carapi20.herokuapp.com/Car?_page=${page}&_limit=5`)
+        fetch(`https://travelocity.onrender.com/Car?_page=${page}&_limit=5`)
             .then((res) => res.json())
             .then((res) => setCarData(res))
             .catch((err) => setError(true))
@@ -167,9 +168,13 @@ const [page,setPage] = React.useState(1)
     };
 const handleClickCar = ()=>{
     setLoding(true)
-    fetch(`https://carapi20.herokuapp.com/Car`)
+    // fetch(`https://carapi20.herokuapp.com/Car`)
+    fetch(`https://travelocity.onrender.com/Car`)
         .then((res) => res.json())
-        .then((res) => setCarData(res))
+        .then((res) =>{
+            // console.log(res);
+            setCarData(res)
+        })
         .catch((err) => setError(true))
         .finally(() => setLoding(false))
 }
