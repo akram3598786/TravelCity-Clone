@@ -27,7 +27,7 @@ export function RoutesPage() {
                 <Route path="/payment" element={<PaymentPage />}></Route>
                 <Route path='/carlist' element={<Carsection/>}></Route>
                 <Route path='/carreserve/:id' element={<Reserv/>}></Route>
-
+                {/* <Route path='/carreserve/:id' element={<Reserv/>}></Route> */}
             </Routes>
             <Footer />
         </div>

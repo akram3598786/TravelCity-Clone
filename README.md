@@ -13,8 +13,6 @@
 > ## Github :- •[Mohit Sharma](https://github.com/mohitsharma9001)
 >
 > ## Github :-•[Vishal Karale](https://github.com/vishalvsk)
->
-> ## Github :-•[Chandan Giri](https://github.com/chandan0c)
 
 ## Built with
 
@@ -55,7 +53,7 @@
   <li>Room booking in hotel</li>
   <li>Individual hotel details pages with differnt rooms</li>
   <li>Filter hotels list by their ratings, hotel name and budget range etc.</li>
-  <li>Car Serachind by date, pickup and droping time</li>
+  <li>Car searching by date, pickup and droping time</li>
   <li>Car Booking</li>
   <li>Payment gateway</li>
   <li>Responsive</li>
